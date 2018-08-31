@@ -11,6 +11,12 @@ function Container(id, className)
   return div;
 }
 
+Container.prototype.remove = function(delId)
+{
+  var elem = document.getElementById(delId);
+  elem.parentNode.removeChild(elem);
+}
+
 function Menu(id, className, items){
   Container.call(this, id, className);
   this.items = items;
