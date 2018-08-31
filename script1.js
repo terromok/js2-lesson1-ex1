@@ -46,7 +46,7 @@ MenuItem.prototype.render = function(){
   var a = document.createElement('a');
 
   a.href = this.href;
-  a.textContent = this.label;
+  a.textContent = this.name;
 
   li.appendChild(a);
   li.className = this.class;
