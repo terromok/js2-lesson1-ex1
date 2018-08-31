@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>menu</title>
+	<script src="script1.js"></script>
+	<script>
+		window.onload = function() {
+			var menu = new Menu('menu', 'menu', [
+				new MenuItem('/', 'Home'),
+				new MenuItem('news', 'news'),
+				new MenuItem('blog', 'blog'),
+				]);
+
+			document.body.appendChild(menu.render());
+		}
+	</script>
 </head>
 <body>
-	<script src="script1.js"></script>
+	
 </body>
 </html>
