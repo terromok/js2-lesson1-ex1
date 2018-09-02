@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<script src="script2.js"></script>
+	<script>
+		window.onload = function() {
+			var items = [
+				new MenuItem('#', 'Home'),
+				new SuperMenu('childMenu', 'childMenu', [
+					new MenuItem('#', 'News1'),
+					new MenuItem('#', 'News2'),
+					new MenuItem('#', 'News3'),
+					new MenuItem('#', 'News4'),	
+					], 'News', '#'),
+				new SuperMenu('childMenu', 'childMenu', [
+					new MenuItem('#', 'Products1'),
+					new MenuItem('#', 'Products2'),
+					new MenuItem('#', 'Products3'),
+					new MenuItem('#', 'Products4'),	
+					], 'Products', '#'),
+				new MenuItem('#', 'About'),
+			]
+
+			var menu = new Menu('menu', 'menu', items);
+
+			document.body.appendChild(menu.render());
+		}
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
