@@ -1,0 +1,8 @@
+{
+	"items": [
+		{"id": 1, "label": "home", "href": "/"},
+		{"id": 2, "label": "news", "href": "/news"},
+		{"id": 3, "label": "products", "href": "/products"},
+		{"id": 4, "label": "about", "href": "/about"}
+	]
+}
