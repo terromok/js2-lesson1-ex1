@@ -12,11 +12,14 @@ window.onload = function () {
 					if (item.submenu === undefined) {
 						//console.log(item.submenu);
 						return new MenuItem(item.href, item.label);}
-					else { //console.log('fghjfjjf');
+					else { console.log(item.submenu.length);
+						for (var i = 0; i < item.submenu.length; i++) {
+							
+						
 						return new SuperMenu('childMenu', 'childMenu', [
-					new MenuItem(item.submenu.href, item.submenu.label),
-					], item.label, item.href)
-					}
+						new MenuItem(item.submenu[i].href, item.submenu[i].label),
+						], item.label, item.href)
+						}}
 				});
 				var menu = new Menu('menu', 'menu', items);
 
