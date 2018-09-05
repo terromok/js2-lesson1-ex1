@@ -1,0 +1,12 @@
+{
+	"items": [
+		{"id": 1, "label": "home", "href": "/"},
+		{"id": 2, "label": "news", "href": "/news", "submenu":
+			[
+				{"label": "news1", "href": "/news1"},
+				{"label": "news2", "href": "/news2"}
+			]
+		},
+		{"id": 3, "label": "blog", "href": "/blog"}
+	]
+}
