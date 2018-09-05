@@ -12,7 +12,11 @@ window.onload = function () {
 					if (item.submenu === undefined) {
 						console.log(item.submenu);
 						return new MenuItem(item.href, item.label);}
-					else { console.log('fghjfjjf');}
+					else { //console.log('fghjfjjf');
+						return new SuperMenu('childMenu', 'childMenu', [
+					new MenuItem(item.href, item.label),
+					], item.submenu.label, item.submenu.href)
+					}
 				});
 				var menu = new Menu('menu', 'menu', items);
 
