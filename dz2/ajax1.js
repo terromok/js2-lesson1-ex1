@@ -10,12 +10,12 @@ window.onload = function () {
 				//console.log(items.submenu);
 				items = items.map(function(item) {
 					if (item.submenu === undefined) {
-						console.log(item.submenu);
+						//console.log(item.submenu);
 						return new MenuItem(item.href, item.label);}
 					else { //console.log('fghjfjjf');
 						return new SuperMenu('childMenu', 'childMenu', [
-					new MenuItem(item.href, item.label),
-					], item.submenu.label, item.submenu.href)
+					new MenuItem(item.submenu.href, item.submenu.label),
+					], item.label, item.href)
 					}
 				});
 				var menu = new Menu('menu', 'menu', items);
