@@ -13,9 +13,7 @@ window.onload = function () {
 						//console.log(item.submenu);
 						return new MenuItem(item.href, item.label);}
 					else { console.log(item.submenu.length);
-						for (var i = 0; i < item.submenu.length; i++) {
-							
-						
+						for (var i = 0; i <= item.submenu.length; i++) {
 						return new SuperMenu('childMenu', 'childMenu', [
 						new MenuItem(item.submenu[i].href, item.submenu[i].label),
 						], item.label, item.href)

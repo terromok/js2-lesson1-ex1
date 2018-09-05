@@ -4,6 +4,8 @@
 		{"id": 2, "label": "news", "href": "/news", "submenu":
 			[
 				{"label": "news1", "href": "/news1"},
+				{"label": "news1", "href": "/news1"},
+				{"label": "news1", "href": "/news1"},
 				{"label": "news3", "href": "/news3"}
 			]
 		},
