@@ -41,6 +41,8 @@ function buildCart() {
 }
 
 function buildGoodsList() {
+  // Очищаем вывод товара
+  $('#goods').empty();
   // Запрашиваем список товаров на складе
   $.ajax({
     url: 'http://localhost:3000/goods',
@@ -121,8 +123,22 @@ function buildGoodsList() {
       var id = $(this).attr('data-id');
       //проверяем, есть ли товар на складе
       var quantityAll = $(this).attr('data-quantityAll');
-      var entityGood = $('#goods [id="' + id + '"]');
       if ( quantityAll > 0) {
+        //уменьшаем количество товара на складе
+          $.ajax({
+          url: 'http://localhost:3000/goods/' + id,
+          type: 'PATCH',
+          headers: {
+            'content-type': 'application/json',
+          },
+          data: JSON.stringify({
+            quantityAlll: quantityAll - 1,
+          }),
+          success: function() {
+            // Перестраиваем товар(количество товара)
+            buildGoodsList();
+          }
+        })
         // Пробуем найти такой товар в корзине
         var entity = $('#cart [data-id="' + id + '"]');
         if(entity.length) {
@@ -141,16 +157,6 @@ function buildGoodsList() {
               buildCart();
             }
           });
-          $.ajax({
-            url: 'http://localhost:3000/goods/' + id,
-            type: 'PATCH',
-            headers: {
-              'content-type': 'application/json',
-            },
-            data: JSON.stringify({
-              quantityAlll: quantityAll - 1,
-            }),
-          })
         } else {
           // Товара в корзине нет - создаем в количестве 1
           $.ajax({

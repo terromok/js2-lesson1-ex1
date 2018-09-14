@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Трусы",
       "price": 255,
-      "quantityAlll": 0
+      "quantityAlll": 5
     },
     {
       "id": 2,
@@ -22,33 +22,8 @@
       "id": 4,
       "name": "Шапки",
       "price": 567,
-      "quantityAlll": 4
+      "quantityAlll": 5
     }
   ],
-  "cart": [
-    {
-      "id": "2",
-      "quantity": 1,
-      "name": "Майки",
-      "price": "100"
-    },
-    {
-      "id": "3",
-      "quantity": 1,
-      "name": "Носки",
-      "price": "150"
-    },
-    {
-      "id": "4",
-      "quantity": 1,
-      "name": "Шапки",
-      "price": "567"
-    },
-    {
-      "id": "1",
-      "quantity": 8,
-      "name": "Трусы",
-      "price": "255"
-    }
-  ]
+  "cart": []
 }
