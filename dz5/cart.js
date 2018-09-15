@@ -87,9 +87,26 @@ function buildGoodsList() {
     $('#cart').on('click', '.delete', function() {
       // Получаем id товара, который пользователь хочет удалить
       var id = $(this).attr('data-id');
+      //увеличиваем количество товара на складе
+      var quantityA = $('#goods [data-id="' + id + '"]');
+        $.ajax({
+          url: 'http://localhost:3000/goods/' + id,
+          type: 'PATCH',
+          headers: {
+            'content-type': 'application/json',
+          },
+          data: JSON.stringify({
+            quantityAlll: +$(quantityA).attr('data-quantityall') + 1,
+          }),
+          success: function() {
+            // Перестраиваем вывод товара
+            buildGoodsList();
+          }
+        });
+
       var entity = $('#cart [data-id="' + id + '"]');
       if ($(entity).attr('data-quantity') > 1) {
-              $.ajax({
+        $.ajax({
           url: 'http://localhost:3000/cart/' + id,
           type: 'PATCH',
           headers: {
@@ -122,7 +139,8 @@ function buildGoodsList() {
       // Определяем id товара, который пользователь хочет купить
       var id = $(this).attr('data-id');
       //проверяем, есть ли товар на складе
-      var quantityAll = $(this).attr('data-quantityAll');
+      quantityAll = $(this).attr('data-quantityAll');
+
       if ( quantityAll > 0) {
         //уменьшаем количество товара на складе
           $.ajax({
