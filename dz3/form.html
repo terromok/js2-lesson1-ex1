@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forms</title>
+	<style>
+		.form-field {
+			clear: both;
+			display: block;
+			max-width: 200px;
+			padding-bottom: 10px;
+		}
+		.form-field input.invalid {
+			border: 1px solid red;
+		}
+		.form-field input {
+			float: right;
+		}
+		.form-field textarea {
+			clear: both;
+			display: block;
+		}
+	</style>
+	<script src="form.js"></script>
+</head>
+<body>
+	<form method="get" name="MyForm">
+		<label class="form-field" for="name">Name<input type="text" id="name" name="name" ></label>
+		<label class="form-field" for="phone">Phone<input type="text" data-validation-rule="phone" id="phone" name="phone" ></label>
+		<label class="form-field" for="email">E-mail<input type="text" data-validation-rule="email" id="email" name="email" ></label>
+		<label class="form-field" for="text">Message<textarea rows="10" cols="100" id="message"></textarea> </label>
+
+		<input type="submit" id="submit" value="Send">
+	</form>
+</body>
+</html>

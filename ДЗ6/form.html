@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forms</title>
+	<style>
+		.form-field {
+			clear: both;
+			display: block;
+			max-width: 200px;
+			padding-bottom: 10px;
+		}
+		.form-field input.invalid {
+			border: 1px solid red;
+		}
+		.form-field input {
+			float: right;
+		}
+		.form-field textarea {
+			clear: both;
+			display: block;
+		}
+		#slider { margin: 10px; }
+		#dialog {
+			width: 300px;
+			height: 120px;
+			background-color: lightgrey;
+			display: none;
+		}
+	</style>
+	<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="form.js"></script>
+</head>
+<body>
+	<div id="dialog"><p>Неправильные данные</p></div>
+	<form method="get" name="MyForm">
+		<label class="form-field" for="name">Name<input type="text" id="name" name="name" ></label>
+		<label class="form-field" for="phone">Phone<input type="text" data-validation-rule="phone" id="phone" name="phone" ></label>
+		<label class="form-field" for="email">E-mail<input type="text" data-validation-rule="email" id="email" name="email" ></label>
+		<div id="slider"></div>
+ 
+<script>
+$( "#slider" ).slider();
+</script>
+		<label  class="form-field">Дата рождения<input type='text' id='datepicker' /></label>
+		<label class="form-field" for="text">Message<textarea rows="10" cols="100" id="message"></textarea> </label>
+
+
+		<input type="submit" id="submit" value="Send">
+		<input type="submit" id="reset" value="Reset">
+	</form>
+</body>
+</html>
